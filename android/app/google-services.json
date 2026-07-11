@@ -1,12 +1,13 @@
 {
   "project_info": {
-    "project_number": "000000000000",
-    "project_id": "dev"
+    "project_number": "326634226401",
+    "project_id": "myvpn-a87e2",
+    "storage_bucket": "myvpn-a87e2.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
+        "mobilesdk_app_id": "1:326634226401:android:c63313e734dbc32be2ada0",
         "android_client_info": {
           "package_name": "com.follow.clash"
         }
@@ -14,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "0"
+          "current_key": "AIzaSyB_z4kiLDFaL3eypVqFlDDfaYJDJg1wCmI"
         }
       ],
       "services": {
@@ -25,26 +26,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
-        "android_client_info": {
-          "package_name": "com.follow.clash.debug"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "0"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
+        "mobilesdk_app_id": "1:326634226401:android:ea360185097a6137e2ada0",
         "android_client_info": {
           "package_name": "com.follow.clash.dev"
         }
@@ -52,7 +34,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "0"
+          "current_key": "AIzaSyB_z4kiLDFaL3eypVqFlDDfaYJDJg1wCmI"
         }
       ],
       "services": {
@@ -61,5 +43,6 @@
         }
       }
     }
-  ]
+  ],
+  "configuration_version": "1"
 }
