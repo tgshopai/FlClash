@@ -18,7 +18,6 @@ class LoginPage extends ConsumerStatefulWidget {
 
 class _LoginPageState extends ConsumerState<LoginPage> {
   final _formKey = GlobalKey<FormState>();
-  late final TextEditingController _panelCtrl;
   final _emailCtrl = TextEditingController();
   final _passCtrl = TextEditingController();
   bool _obscure = true;
@@ -29,15 +28,11 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   void initState() {
     super.initState();
     final st = ref.read(xboardAuthProvider);
-    _panelCtrl = TextEditingController(
-      text: st.panelUrl.isEmpty ? kDefaultPanelUrl : st.panelUrl,
-    );
     _emailCtrl.text = st.email;
   }
 
   @override
   void dispose() {
-    _panelCtrl.dispose();
     _emailCtrl.dispose();
     _passCtrl.dispose();
     super.dispose();
@@ -51,7 +46,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     });
     try {
       final mihomoUrl = await ref.read(xboardAuthProvider.notifier).login(
-            panelUrl: _panelCtrl.text.trim(),
+            panelUrl: kDefaultPanelUrl,
             email: _emailCtrl.text.trim(),
             password: _passCtrl.text,
           );
@@ -70,9 +65,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   }
 
   Future<void> _openPanel(String path) async {
-    var base = _panelCtrl.text.trim();
-    if (base.isEmpty) base = kDefaultPanelUrl;
-    base = base.replaceAll(RegExp(r'/+$'), '');
+    var base = kDefaultPanelUrl.replaceAll(RegExp(r'/+$'), '');
     final uri = Uri.parse('$base$path');
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri, mode: LaunchMode.externalApplication);
@@ -108,20 +101,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                       style: theme.textTheme.bodySmall
                           ?.copyWith(color: theme.hintColor)),
                   const SizedBox(height: 24),
-                  TextFormField(
-                    controller: _panelCtrl,
-                    keyboardType: TextInputType.url,
-                    decoration: const InputDecoration(
-                      labelText: '面板地址',
-                      hintText: 'https://panel.example.com',
-                      prefixIcon: Icon(Icons.dns_outlined),
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (v) => (v == null || !v.trim().startsWith('http'))
-                        ? '请填写以 http(s) 开头的面板地址'
-                        : null,
-                  ),
-                  const SizedBox(height: 14),
+                  // 面板地址已隐藏(写死在 kDefaultPanelUrl),用户只填邮箱密码。
                   TextFormField(
                     controller: _emailCtrl,
                     keyboardType: TextInputType.emailAddress,

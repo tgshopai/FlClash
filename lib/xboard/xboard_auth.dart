@@ -23,8 +23,9 @@ import 'xboard_api.dart';
 
 const _secureStorage = FlutterSecureStorage();
 
-/// 改成你自己的面板地址(用户首次登录时的默认值,可在登录页修改)。
-const String kDefaultPanelUrl = 'https://panel.example.com';
+/// 你的面板地址。登录页已隐藏"面板地址"输入框,用户只填邮箱密码,登录直接用这个地址。
+/// 换域名时改这里、重编即可。
+const String kDefaultPanelUrl = 'https://panel.viaxvpn.com';
 
 const _kPanelUrl = 'xb_panel_url';
 const _kEmail = 'xb_email';
