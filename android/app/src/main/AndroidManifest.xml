@@ -31,7 +31,7 @@
         android:banner="@mipmap/ic_banner"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="tiantiVPN">
+        android:label="TianTiLink">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -59,9 +59,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="tianti" />
-                <data android:scheme="tiantimeta" />
-                <data android:scheme="TianTiVPN" />
+                <data android:scheme="TianTiLink" />
+                <data android:scheme="TianTiLinkmeta" />
+                <data android:scheme="TianTiLink" />
 
                 <data android:host="install-config" />
             </intent-filter>
@@ -90,7 +90,7 @@
             android:name=".TileService"
             android:exported="true"
             android:icon="@drawable/ic"
-            android:label="TianTiVPN"
+            android:label="TianTiLink"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
